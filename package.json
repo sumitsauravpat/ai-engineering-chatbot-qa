@@ -1,8 +1,9 @@
 {
-  "name": "ai-chat-validation",
+  "name": "ai-engineering-chatbot-qa",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
