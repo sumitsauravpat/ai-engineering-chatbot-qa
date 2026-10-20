@@ -1,0 +1,26 @@
+[
+  {
+    "customerId": "C100",
+    "phoneNumber": "416-555-0199",
+    "accountNumber": "ACC-10045",
+    "planName": "Unlimited Plus",
+    "monthlyPrice": 85,
+    "region": "Ontario"
+  },
+  {
+    "customerId": "C101",
+    "phoneNumber": "604-555-0133",
+    "accountNumber": "ACC-10046",
+    "planName": "Basic Saver",
+    "monthlyPrice": 45,
+    "region": "British Columbia"
+  },
+  {
+    "customerId": "C102",
+    "phoneNumber": "514-555-0177",
+    "accountNumber": "ACC-10047",
+    "planName": "Unlimited Plus",
+    "monthlyPrice": 85,
+    "region": "Quebec"
+  }
+]

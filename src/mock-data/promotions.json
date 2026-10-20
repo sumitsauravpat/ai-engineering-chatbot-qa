@@ -1,0 +1,20 @@
+[
+  {
+    "region": "Ontario",
+    "discountPercent": 15,
+    "upgradeOption": {
+      "planName": "Unlimited Max",
+      "monthlyPrice": 95,
+      "bonusYears": 2
+    }
+  },
+  {
+    "region": "Quebec",
+    "discountPercent": 10,
+    "upgradeOption": {
+      "planName": "Unlimited Max",
+      "monthlyPrice": 95,
+      "bonusYears": 2
+    }
+  }
+]
