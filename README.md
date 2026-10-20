@@ -67,29 +67,6 @@ answer is shaped by a `responseFormat` schema — structured data out, not just 
 
 ---
 
-## A real finding — the first live run caught a real bug
-
-The first end-to-end run exposed a genuine ordering violation: asked "do we have any discounts
-in my region?", the agent skipped identity verification entirely and called
-`get_regional_promotions` with a **fabricated placeholder region** (`"<UNKNOWN>"`), because the
-question phrase matched the tool's description more strongly than it respected the verification
-rule.
-
-**Root cause:** the system prompt's original rule said "verify before *sharing* details" — the
-model interpreted that as not applying to *calling a tool*, only to the final answer.
-
-**Fix:** the rule was rewritten to explicitly block *any* tool call other than verification
-until identity is confirmed, with no exceptions carved out for promotion-related questions.
-Re-running confirmed the fix: a second turn, given a real phone number, correctly called
-`verify_account_by_phone_or_id` with the real argument, retrieved the real customer record, and
-produced a correctly verified structured response — with memory intact across both turns.
-
-This is the exact class of failure that makes AI testing a real discipline, not busywork: a
-written rule is a strong influence on an LLM's behavior, never a guarantee the way a literal
-`if` statement is. You can't know an agent respects its own rules until you test it.
-
----
-
 ## Running it locally
 
 ```bash
