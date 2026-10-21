@@ -1,0 +1,14 @@
+prompts:
+  - "{{message}}"
+
+providers:
+  - file://src/promptfooProvider.ts
+
+tests:
+  - vars:
+      message: My phone number is 416-555-0199
+    assert:
+      - type: contains
+        value: Unlimited Plus
+      - type: contains
+        value: '"calledVerifyAccount":true'

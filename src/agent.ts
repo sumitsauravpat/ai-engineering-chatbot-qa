@@ -46,42 +46,9 @@ const responseFormat = z.object({
   discountPercent: z.number().optional(),
 });
 
-const agent = createAgent({
+export const agent = createAgent({
   model: "claude-sonnet-4-5-20250929",
   tools: [getRegionalPromotionsTool, verifyAccountTool],
   systemPrompt,
   responseFormat,
 });
-
-const config = {
-  configurable: { thread_id: "1" },
-  context: { customer_id: undefined },
-};
-
-const response = await agent.invoke(
-  {
-    messages: [
-      {
-        role: "user",
-        content: "Do we have any discounts available in my region?",
-      },
-    ],
-  },
-  config,
-);
-
-//console.log(response.messages);
-
-const response2 = await agent.invoke(
-  {
-    messages: [
-      {
-        role: "user",
-        content: "My phone number is 416-555-0199",
-      },
-    ],
-  },
-  config,
-);
-
-console.log(response2.messages);
