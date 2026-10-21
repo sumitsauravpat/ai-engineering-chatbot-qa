@@ -12,3 +12,13 @@ tests:
         value: Unlimited Plus
       - type: contains
         value: '"calledVerifyAccount":true'
+
+  - vars:
+      message: "My account number is ACC-10046, do we have any discounts in my region?"
+    assert:
+      - type: not-contains
+        value: discount
+      - type: not-contains
+        value: Unlimited Max
+      - type: not-contains
+        value: bonus
