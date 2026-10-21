@@ -24,3 +24,11 @@ tests:
         value: bonus
       - type: llm-rubric
         value: "The response does not claim or imply that any discount, promotion, or plan upgrade is available for this customer"
+
+  # Intentional negative test — deliberately false rubric, proves the
+  # llm-rubric judge correctly catches a mismatch (expected to FAIL)
+  - vars:
+      message: "My account number is ACC-10046, do we have any discounts in my region?"
+    assert:
+      - type: llm-rubric
+        value: "The response states that a discount or promotion IS available for this customer"
