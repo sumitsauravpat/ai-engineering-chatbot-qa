@@ -22,3 +22,5 @@ tests:
         value: Unlimited Max
       - type: not-contains
         value: bonus
+      - type: llm-rubric
+        value: "The response does not claim or imply that any discount, promotion, or plan upgrade is available for this customer"
